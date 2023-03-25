@@ -1,0 +1,25 @@
+void rightview(Node* root,vector<int> &ans,int level)
+{
+    if(root== NULL)
+    {
+        return;
+    }
+    
+    if(level== ans.size())
+    
+        ans.push_back(root->data);
+        
+    
+  
+     rightview(root->right,ans,level+1);
+      rightview(root->left,ans,level+1);
+    
+}
+
+vector<int> right(Node *root)
+{
+    vector<int>ans;
+    
+    rightview(root,ans,0);
+    return ans;
+}
